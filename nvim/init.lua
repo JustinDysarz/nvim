@@ -1,7 +1,7 @@
 require("cyber")
-vim.opt.wrap = false
-vim.wo.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
+
+vim.cmd('source ~/.config/nvim/init.vim')
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = 'Telescope find files' })
@@ -71,12 +71,3 @@ local lsp = require('lsp-zero')
 
 lsp.preset('recommended')
 lsp.setup()
-
-lsp.ensure_installed({
-	'rust_analyzer',
-	'jdtls',
-	'html',
-	'cssls',
-	'clangd',
-	'lua_ls',
-})
